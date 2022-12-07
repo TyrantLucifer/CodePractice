@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test7 {
-    private static final List<Character> path = new ArrayList<>();
     private static final List<String> result = new ArrayList<>();
 
     private void backTrack(String s, int startIndex, int pointNum) {
@@ -43,5 +42,16 @@ public class Test7 {
             }
         }
         return true;
+    }
+
+    public void print() {
+        System.out.println(result);
+    }
+
+    public static void main(String[] args) {
+        String s = "010010";
+        Test7 test7 = new Test7();
+        test7.backTrack(s, 0, 0);
+        test7.print();
     }
 }

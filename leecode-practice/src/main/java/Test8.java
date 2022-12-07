@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test8 {
+    private static final List<List<Integer>> result = new ArrayList<>();
+    private static final List<Integer> path = new ArrayList<>();
+
+    public void backtrace(int[] collection, int num, int startIndex) {
+        if (path.size() == num) {
+            result.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = startIndex; i < collection.length; i++) {
+            path.add(collection[i]);
+            backtrace(collection, num, i + 1);
+            path.remove(path.size() - 1);
+        }
+    }
+
+    public void print() {
+        System.out.println(result);
+    }
+
+    public static void main(String[] args) {
+        int[] collection = new int[]{1,2,3};
+        Test8 test8 = new Test8();
+        for (int i = 0; i <= collection.length; i++) {
+            test8.backtrace(collection, i, 0);
+        }
+        test8.print();
+    }
+}
