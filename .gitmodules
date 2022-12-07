@@ -1,0 +1,4 @@
+[submodule "incubator-seatunnel"]
+	path = incubator-seatunnel
+	url = https://github.com/apache/incubator-seatunnel.git
+	branch = dev
